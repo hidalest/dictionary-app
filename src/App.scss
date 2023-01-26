@@ -1,0 +1,26 @@
+@import './sassStyles/variables';
+
+.app {
+  width: 100%;
+  height: 100vh;
+  border: 1px solid red;
+
+  &.light {
+    background-color: $white-1;
+  }
+
+  &.dark {
+    background-color: $dark-4;
+  }
+
+  &.mono {
+    font-family: $mono;
+  }
+
+  &.serif {
+    font-family: $serif;
+  }
+  &.sans {
+    font-family: $sans;
+  }
+}

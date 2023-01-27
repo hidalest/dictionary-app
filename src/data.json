@@ -1,0 +1,30 @@
+{
+  "headerNav": {
+    "logo": {
+      "href": "#",
+      "title": "logo of the dictionary app",
+      "path": "../src/assets/images/logo.svg",
+      "altText": "dictionary logo"
+    },
+    "fontDropdown": {
+      "arrowIcon": "../src/assets/images/icon-arrow-down.svg",
+      "items": [
+        {
+          "fontName": "sans",
+          "defaultActive": false,
+          "fontFullName": "Sans-Serif"
+        },
+        {
+          "fontName": "serif",
+          "defaultActive": true,
+          "fontFullName": "Source Serif Pro"
+        },
+        {
+          "fontName": "mono",
+          "defaultActive": false,
+          "fontFullName": "Roboto Mono"
+        }
+      ]
+    }
+  }
+}

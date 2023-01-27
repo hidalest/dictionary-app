@@ -1,0 +1,20 @@
+@import '../../sassStyles/variables';
+
+.appHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  &_actions {
+    height: 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    &--divider {
+      margin: 0 2rem;
+      border: 1px solid $white-1;
+      height: 100%;
+    }
+  }
+}

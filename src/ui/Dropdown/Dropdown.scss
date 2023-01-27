@@ -1,0 +1,46 @@
+@import '../../sassStyles/variables';
+.dropdown {
+  display: flex;
+  border: 0;
+  background-color: transparent;
+  cursor: pointer;
+  position: relative;
+
+  &-icon {
+    transform: rotateX(0deg);
+    transition: all 0.25s ease-out;
+  }
+
+  &.open {
+    .dropdown-icon {
+      transform: rotateX(180deg);
+      transition: all 0.25s ease-out;
+    }
+  }
+
+  &_container {
+    border: 1px solid red;
+    padding: 10px 10px;
+    position: absolute;
+    top: 3rem;
+    display: none;
+
+    .dropdown.open & {
+      display: inline-block;
+    }
+
+    &-item {
+      display: block;
+      text-align: left;
+      &.serif {
+        font-family: $serif;
+      }
+      &.mono {
+        font-family: $mono;
+      }
+      &.sans {
+        font-family: $sans;
+      }
+    }
+  }
+}

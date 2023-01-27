@@ -10,6 +10,7 @@
 
   &.dark {
     background-color: $dark-4;
+    color: $white-1;
   }
 
   &.mono {
@@ -26,7 +27,6 @@
   &_container {
     width: 50rem;
     margin: 0 auto;
-    border: 1px solid red;
     height: 100vh;
   }
 }

@@ -1,6 +1,7 @@
 import React from 'react';
 import icon from '../../assets/images/logo.svg';
 import Dropdown from '../../ui/Dropdown/Dropdown';
+import './HeaderNav.scss';
 
 interface HeaderNavInterface {
   headerNav: {
@@ -26,7 +27,10 @@ const HeaderNav = (props: HeaderNavInterface) => {
         <img src={path} alt={altText} />
       </a>
 
-      <Dropdown fontDropdown={headerNav.fontDropdown} />
+      <div className='appHeader_actions'>
+        <Dropdown fontDropdown={headerNav.fontDropdown} />
+        <span className='appHeader_actions--divider' />
+      </div>
     </header>
   );
 };

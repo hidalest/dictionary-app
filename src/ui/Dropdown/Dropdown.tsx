@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { useAppDispatch, useAppSelector } from '../../hooks/redux';
 import { appActions } from '../../store/store';
+import { getFontFullName } from '../../utils/functions';
 import './Dropdown.scss';
 
 interface DropdownInterface {
@@ -27,13 +28,14 @@ const DropdownContainer = (props: DropdownContainerInterface) => {
   const activeDropdownHandler = () =>
     setActiveDropdown(activeDropdown == 'closed' ? 'open' : 'closed');
 
+  const currentFullFontName = getFontFullName(currentFont);
   return (
     <button
       className={`dropdown ${activeDropdown}`}
       onClick={activeDropdownHandler}
     >
       <span className='dropdown-btn'>
-        {currentFont}
+        {currentFullFontName}
         <img
           src={arrowIcon}
           alt='arrow icon dropdown'

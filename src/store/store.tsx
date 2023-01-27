@@ -8,7 +8,7 @@ interface initialStateStore {
 type FontType = 'mono' | 'serif' | 'sans';
 
 const initialState: initialStateStore = {
-  theme: 'light',
+  theme: 'dark',
   font: 'sans',
 };
 

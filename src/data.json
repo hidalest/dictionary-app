@@ -25,6 +25,9 @@
           "fontFullName": "Roboto Mono"
         }
       ]
+    },
+    "toggleTheme": {
+      "lightIcon": "../src/assets/images/icon-moon.svg"
     }
   }
 }

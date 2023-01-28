@@ -6,9 +6,10 @@ interface initialStateStore {
 }
 
 type FontType = 'mono' | 'serif' | 'sans';
+type ThemeType = 'light' | 'dark';
 
 const initialState: initialStateStore = {
-  theme: 'dark',
+  theme: 'light',
   font: 'sans',
 };
 
@@ -16,8 +17,8 @@ const appSlice = createSlice({
   name: 'appState',
   initialState,
   reducers: {
-    changeTheme(state) {
-      state.theme = state.theme === 'light' ? 'dark' : 'light';
+    changeTheme(state, action: PayloadAction<ThemeType>) {
+      state.theme = action.payload;
     },
 
     changeFont(state, action: PayloadAction<FontType>) {

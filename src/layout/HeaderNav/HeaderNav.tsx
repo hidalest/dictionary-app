@@ -1,6 +1,7 @@
 import React from 'react';
 import icon from '../../assets/images/logo.svg';
 import Dropdown from '../../ui/Dropdown/Dropdown';
+import Toggle from '../../ui/Toggle/Toggle';
 import './HeaderNav.scss';
 
 interface HeaderNavInterface {
@@ -30,6 +31,7 @@ const HeaderNav = (props: HeaderNavInterface) => {
       <div className='appHeader_actions'>
         <Dropdown fontDropdown={headerNav.fontDropdown} />
         <span className='appHeader_actions--divider' />
+        <Toggle />
       </div>
     </header>
   );

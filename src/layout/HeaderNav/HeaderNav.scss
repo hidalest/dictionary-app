@@ -4,6 +4,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  padding-top: 2rem;
 
   &_actions {
     height: 2rem;
@@ -15,6 +16,10 @@
       margin: 0 2rem;
       border: 1px solid $white-1;
       height: 100%;
+
+      .light & {
+        border-color: $grey-1;
+      }
     }
   }
 }

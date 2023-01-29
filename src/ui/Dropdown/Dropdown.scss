@@ -50,6 +50,8 @@
       display: block;
       text-align: left;
       margin: 0.8rem 0;
+      cursor: pointer;
+
       &.serif {
         font-family: $serif;
       }
@@ -58,6 +60,11 @@
       }
       &.sans {
         font-family: $sans;
+      }
+
+      &:hover {
+        color: $purple-1;
+        transition: all 0.25s ease-out;
       }
     }
   }

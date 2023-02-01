@@ -1,3 +1,4 @@
+import data from '../data.json';
 import { configureStore, createSlice, PayloadAction } from '@reduxjs/toolkit';
 
 interface initialStateStore {
@@ -9,8 +10,10 @@ type FontType = 'mono' | 'serif' | 'sans';
 type ThemeType = 'light' | 'dark';
 
 const initialState: initialStateStore = {
-  theme: 'light',
-  font: 'sans',
+  // theme: 'dark',
+  // font: 'sans',
+  theme: data.theme || 'dark',
+  font: data.font || 'mono',
 };
 
 const appSlice = createSlice({

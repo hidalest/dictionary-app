@@ -29,5 +29,12 @@
     "toggleTheme": {
       "lightIcon": "../src/assets/images/icon-moon.svg"
     }
+  },
+  "mainContent": {
+    "inputElement": {
+      "placeholder": "Search for any word",
+      "errorMessage": "Whoops, can't be empty",
+      "searchIcon": "../src/assets/images/icon-search.svg"
+    }
   }
 }

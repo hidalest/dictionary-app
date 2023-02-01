@@ -2,11 +2,7 @@ import './App.scss';
 import { useAppDispatch, useAppSelector } from './hooks/redux';
 import HeaderNav from './layout/HeaderNav/HeaderNav';
 import data from './data.json';
-import { appActions } from './store/store';
-
-const defaultFont =
-  data.headerNav.fontDropdown.items.find((font) => font.defaultActive === true)
-    ?.fontName || 'sans';
+import InputText from './ui/InputText/InputText';
 
 function App() {
   const appTheme = useAppSelector((state) => state.theme.theme);
@@ -17,6 +13,10 @@ function App() {
     <div className={`${'app'} ${appTheme} ${appFont}`}>
       <div className='app_container'>
         <HeaderNav headerNav={data.headerNav} />
+
+        <main className='app_main'>
+          <InputText inputElement={data.mainContent.inputElement} />
+        </main>
       </div>
     </div>
   );

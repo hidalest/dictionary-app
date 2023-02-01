@@ -1,11 +1,13 @@
 import './Toggle.scss';
 import moonIcon from '../../assets/images/icon-moon.svg';
-import { useAppDispatch } from '../../hooks/redux';
+import { useAppDispatch, useAppSelector } from '../../hooks/redux';
 import { appActions } from '../../store/store';
 import React from 'react';
 
 const Toggle = () => {
   const dispatch = useAppDispatch();
+  const currentTheme = useAppSelector((state) => state.theme.theme);
+  const isDarkThemeSelected = currentTheme === 'dark';
 
   const toggleThemeHandler = (e: React.ChangeEvent<HTMLInputElement>) => {
     const isDarkMode = e.target.checked;
@@ -20,7 +22,11 @@ const Toggle = () => {
     <div className='toggle'>
       <span className='material-symbols-outlined toggle_icon'>light_mode</span>
       <label className='switch'>
-        <input type='checkbox' onChange={toggleThemeHandler} />
+        <input
+          type='checkbox'
+          onChange={toggleThemeHandler}
+          checked={isDarkThemeSelected}
+        />
         <span className='slider round'></span>
       </label>
       <span className='material-symbols-outlined toggle_icon'>dark_mode</span>

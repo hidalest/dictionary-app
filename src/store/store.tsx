@@ -4,16 +4,16 @@ import { configureStore, createSlice, PayloadAction } from '@reduxjs/toolkit';
 interface initialStateStore {
   theme: string;
   font: string;
+  searchedWord: string;
 }
 
 type FontType = 'mono' | 'serif' | 'sans';
 type ThemeType = 'light' | 'dark';
 
 const initialState: initialStateStore = {
-  // theme: 'dark',
-  // font: 'sans',
   theme: data.theme || 'dark',
   font: data.font || 'mono',
+  searchedWord: '',
 };
 
 const appSlice = createSlice({
@@ -26,6 +26,10 @@ const appSlice = createSlice({
 
     changeFont(state, action: PayloadAction<FontType>) {
       state.font = action.payload;
+    },
+
+    changeSearchedWord(state, action: PayloadAction<string>) {
+      state.searchedWord = action.payload;
     },
   },
 });

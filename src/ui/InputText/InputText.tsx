@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import useGetFetch from '../../hooks/fetch';
 import './InputText.scss';
 
 interface InputTextInterface {
@@ -8,9 +9,10 @@ interface InputTextInterface {
   };
 }
 
+const API_URL = `https://api.dictionaryapi.dev/api/v2/entries/en/`;
+
 const InputText = ({ inputElement }: InputTextInterface) => {
   const { searchIcon, errorMessage } = inputElement;
-
   const [inputValue, setInputValue] = useState('');
   const [isFormValid, setIsFormValid] = useState<undefined | boolean>(
     undefined

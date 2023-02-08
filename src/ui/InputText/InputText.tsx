@@ -7,11 +7,13 @@ interface InputTextInterface {
     searchIcon: string;
     errorMessage: string;
   };
+
+  getTextFromInput: (text: string) => void;
 }
 
 const API_URL = `https://api.dictionaryapi.dev/api/v2/entries/en/`;
 
-const InputText = ({ inputElement }: InputTextInterface) => {
+const InputText = ({ inputElement, getTextFromInput }: InputTextInterface) => {
   const { searchIcon, errorMessage } = inputElement;
   const [inputValue, setInputValue] = useState('');
   const [isFormValid, setIsFormValid] = useState<undefined | boolean>(
@@ -25,6 +27,8 @@ const InputText = ({ inputElement }: InputTextInterface) => {
       setIsFormValid(false);
       return;
     }
+
+    getTextFromInput(inputValue);
   };
 
   const onInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {

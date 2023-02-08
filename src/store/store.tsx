@@ -4,7 +4,14 @@ import { configureStore, createSlice, PayloadAction } from '@reduxjs/toolkit';
 interface initialStateStore {
   theme: string;
   font: string;
-  searchedWord: string;
+  searchedWord: JSONObject;
+}
+
+type JSONValue = string | number | boolean | JSONObject | null;
+
+interface JSONObject {
+  // use this for the JSON data
+  [x: string]: JSONValue;
 }
 
 type FontType = 'mono' | 'serif' | 'sans';
@@ -13,7 +20,7 @@ type ThemeType = 'light' | 'dark';
 const initialState: initialStateStore = {
   theme: data.theme || 'dark',
   font: data.font || 'mono',
-  searchedWord: '',
+  searchedWord: {},
 };
 
 const appSlice = createSlice({
@@ -28,7 +35,7 @@ const appSlice = createSlice({
       state.font = action.payload;
     },
 
-    changeSearchedWord(state, action: PayloadAction<string>) {
+    changeSearchedWord(state, action: PayloadAction<JSONObject>) {
       state.searchedWord = action.payload;
     },
   },

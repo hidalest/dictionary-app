@@ -7,6 +7,7 @@ import useGetFetch from './hooks/fetch';
 import { useEffect } from 'react';
 import { API_URL } from './lib/api';
 import { appActions } from './store/store';
+import Spinner from './ui/Spinner/Spinner';
 
 function App() {
   const appTheme = useAppSelector((state) => state.theme.theme);
@@ -20,7 +21,7 @@ function App() {
     dispatch(appActions.changeSearchedWord(fetchedData));
   };
 
-  console.log(searchedWord);
+  console.log('🚀 ~ file: App.tsx:16 ~ App ~ searchedWord', searchedWord);
 
   return (
     <div className={`${'app'} ${appTheme} ${appFont}`}>
@@ -32,6 +33,10 @@ function App() {
             inputElement={data.mainContent.inputElement}
             getTextFromInput={getTextFromInputHandler}
           />
+
+          {isLoading && <Spinner />}
+
+          <h1>{}</h1>
         </main>
       </div>
     </div>

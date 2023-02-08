@@ -1,0 +1,26 @@
+@import '../../sassStyles/variables';
+
+.spinner {
+  width: 10rem;
+  height: 10rem;
+  border: 1.2rem solid $dark-3;
+  border-top: 1.2rem solid $purple-1;
+  border-radius: 50%;
+  -webkit-animation: spin 2s linear infinite; /* Safari */
+  animation: spinner infinite 0.8s;
+
+  .light & {
+    border: 1.2rem solid $white-2;
+    border-top: 1.2rem solid $purple-1;
+  }
+}
+
+@keyframes spinner {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}

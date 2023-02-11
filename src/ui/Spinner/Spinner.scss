@@ -8,6 +8,9 @@
   border-radius: 50%;
   -webkit-animation: spin 2s linear infinite; /* Safari */
   animation: spinner infinite 0.8s;
+  position: absolute;
+  top: 15rem;
+  left: 40%;
 
   .light & {
     border: 1.2rem solid $white-2;

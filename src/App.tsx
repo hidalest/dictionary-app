@@ -15,14 +15,11 @@ function App() {
   const searchedWord = useAppSelector((state) => state.theme.searchedWord);
   const dispatch = useAppDispatch();
   const { sendRequest, fetchedData, isLoading, error } = useGetFetch();
-  console.log('🚀 ~ file: App.tsx:18 ~ App ~ error', error);
 
   const getTextFromInputHandler = (text: string) => {
     sendRequest(API_URL, text);
     dispatch(appActions.changeSearchedWord(fetchedData));
   };
-
-  console.log('🚀 ~ file: App.tsx:16 ~ App ~ searchedWord', searchedWord);
 
   return (
     <div className={`${'app'} ${appTheme} ${appFont}`}>
@@ -35,7 +32,7 @@ function App() {
             getTextFromInput={getTextFromInputHandler}
           />
 
-          {isLoading && <Spinner />}
+          {true && <Spinner />}
 
           <h1>{}</h1>
         </main>

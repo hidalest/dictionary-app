@@ -14,7 +14,8 @@ function App() {
   const appFont = useAppSelector((state) => state.theme.font);
   const searchedWord = useAppSelector((state) => state.theme.searchedWord);
   const dispatch = useAppDispatch();
-  const { sendRequest, fetchedData, isLoading } = useGetFetch();
+  const { sendRequest, fetchedData, isLoading, error } = useGetFetch();
+  console.log('🚀 ~ file: App.tsx:18 ~ App ~ error', error);
 
   const getTextFromInputHandler = (text: string) => {
     sendRequest(API_URL, text);

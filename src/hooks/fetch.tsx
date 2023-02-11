@@ -8,11 +8,18 @@ interface JSONObject {
 
 const useGetFetch = (applyAction?: (data: JSONObject) => void) => {
   const [isLoading, setIsLoading] = useState(false);
+  const [error, setError] = useState(false);
   const [fetchedData, setFetchedData] = useState<JSONObject>({});
+
   const sendRequest = async (url: string, word: string) => {
     setIsLoading(true);
+    setError(false);
+
+    const controller = new AbortController();
+    const id = setTimeout(() => controller.abort(), 8000);
     try {
-      const response = await fetch(url + word);
+      const response = await fetch(url + word, { signal: controller.signal });
+      clearTimeout(id);
       if (!response.ok) {
         if (response.status >= 500) {
           throw new Error(
@@ -28,8 +35,8 @@ const useGetFetch = (applyAction?: (data: JSONObject) => void) => {
       applyAction(data);
     } catch (error) {
       console.log('🚀 ~ file: fetch.tsx:16 ~ sendRequest ~ error', error);
+      setError(true);
     }
-
     setIsLoading(false);
   };
 
@@ -37,6 +44,7 @@ const useGetFetch = (applyAction?: (data: JSONObject) => void) => {
     sendRequest,
     isLoading,
     fetchedData,
+    error,
   };
 };
 

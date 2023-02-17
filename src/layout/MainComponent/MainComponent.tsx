@@ -14,7 +14,7 @@ const MainComponent = (props: MainComponentInterface) => {
   const { word, phonetic } = props.fetchedWord;
   return (
     <section className='main'>
-      <h1 className='main_header'>{word || 'blahk'}</h1>
+      <h1 className='main_header'>{word}</h1>
       <p className='main_phonetic'>{phonetic}</p>
     </section>
   );

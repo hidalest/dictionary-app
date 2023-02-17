@@ -1,0 +1,15 @@
+@import '../../sassStyles/variables';
+
+.main {
+  margin-top: 5rem;
+
+  & .main_header {
+    font-size: 6.4rem;
+    text-transform: capitalize;
+  }
+
+  & .main_phonetic {
+    font-size: 2.4rem;
+    color: $purple-1;
+  }
+}

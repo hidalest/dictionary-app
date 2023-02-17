@@ -8,6 +8,7 @@ import { useEffect } from 'react';
 import { API_URL } from './lib/api';
 import { appActions } from './store/store';
 import Spinner from './ui/Spinner/Spinner';
+import MainComponent from './layout/MainComponent/MainComponent';
 
 function App() {
   const appTheme = useAppSelector((state) => state.theme.theme);
@@ -15,10 +16,12 @@ function App() {
   const searchedWord = useAppSelector((state) => state.theme.searchedWord);
   const dispatch = useAppDispatch();
   const { sendRequest, fetchedData, isLoading, error } = useGetFetch();
+  console.log('🚀 ~ file: App.tsx:18 ~ App ~ fetchedData', fetchedData);
+
+  const fetchedDataAvailabe = fetchedData !== null;
 
   const getTextFromInputHandler = (text: string) => {
     sendRequest(API_URL, text);
-    dispatch(appActions.changeSearchedWord(fetchedData));
   };
 
   return (
@@ -34,7 +37,7 @@ function App() {
 
           {isLoading && <Spinner />}
 
-          <h1>{}</h1>
+          {fetchedDataAvailabe && <MainComponent fetchedWord={fetchedData} />}
         </main>
       </div>
     </div>

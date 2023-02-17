@@ -31,13 +31,11 @@ const useGetFetch = (applyAction?: (data: JSONObject) => void) => {
 
       const data = await response.json();
       setFetchedData(data);
-      if (!applyAction) return;
-      applyAction(data);
+      setIsLoading(false);
     } catch (error) {
       console.log('🚀 ~ file: fetch.tsx:16 ~ sendRequest ~ error', error);
       setError(true);
     }
-    setIsLoading(false);
   };
 
   return {

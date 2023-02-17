@@ -32,7 +32,7 @@ function App() {
             getTextFromInput={getTextFromInputHandler}
           />
 
-          {true && <Spinner />}
+          {isLoading && <Spinner />}
 
           <h1>{}</h1>
         </main>

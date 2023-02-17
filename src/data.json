@@ -37,6 +37,23 @@
       "placeholder": "Search for any word",
       "errorMessage": "Whoops, can't be empty",
       "searchIcon": "../src/assets/images/icon-search.svg"
+    },
+    "mainContentElements": {
+      "initialStatus": {
+        "initalEmoji": "👨‍💻",
+        "initialHeader": "Let's start by searching your first word!",
+        "initialMessage": "We would try and give you full details of the word that you want to search :)"
+      },
+      "serverErrorStatus": {
+        "initalEmoji": "📟",
+        "initialHeader": "We could't find your word!",
+        "initialMessage": "Sorry pal, we are experiencing technical issues on the server, please try again later"
+      },
+      "noWordFound": {
+        "initalEmoji": "😕",
+        "initialHeader": "No Definitions Found",
+        "initialMessage": "Sorry pal, we couldn't find definitions for the word you were looking for, please try again with other synonyms"
+      }
     }
   }
 }

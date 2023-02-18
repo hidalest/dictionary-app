@@ -1,10 +1,23 @@
 @import '../../sassStyles/variables';
+@import '../../sassStyles/mixins';
 
 .appHeader {
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding-top: 4rem;
+
+  &_logo img {
+    @include responsiveMax($phone) {
+      width: 3rem;
+      height: 3rem;
+    }
+
+    @include responsiveMax($phone-mini) {
+      width: 2rem;
+      height: 2rem;
+    }
+  }
 
   &_actions {
     height: 2rem;

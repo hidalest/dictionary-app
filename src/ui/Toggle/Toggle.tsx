@@ -4,7 +4,12 @@ import { useAppDispatch, useAppSelector } from '../../hooks/redux';
 import { appActions } from '../../store/store';
 import React from 'react';
 
-const Toggle = () => {
+interface ToggleInterface {
+  className: string;
+}
+
+const Toggle = (props: ToggleInterface) => {
+  const { className } = props;
   const dispatch = useAppDispatch();
   const currentTheme = useAppSelector((state) => state.theme.theme);
   const isDarkThemeSelected = currentTheme === 'dark';
@@ -19,7 +24,7 @@ const Toggle = () => {
     }
   };
   return (
-    <div className='toggle'>
+    <div className={`toggle ${className}`}>
       <span className='material-symbols-outlined toggle_icon'>light_mode</span>
       <label className='switch'>
         <input

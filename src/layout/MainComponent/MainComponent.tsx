@@ -22,7 +22,12 @@ const MainComponent = (props: MainComponentInterface) => {
           <h1 className='main_header-title'>{word}</h1>
           <p className='main_header-phonetic'>{phonetic}</p>
         </div>
-        {wordAudio && <AudioButton audioURL={wordAudio} />}
+        {wordAudio && (
+          <AudioButton
+            audioURL={wordAudio}
+            className='main_header--pronunciation'
+          />
+        )}
       </div>
     </section>
   );

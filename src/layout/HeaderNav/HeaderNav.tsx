@@ -24,14 +24,14 @@ const HeaderNav = (props: HeaderNavInterface) => {
   const { path, altText, title, href } = props.headerNav.logo;
   return (
     <header className='appHeader'>
-      <a href={href} title={title}>
+      <a href={href} title={title} className={'appHeader_logo'}>
         <img src={path} alt={altText} />
       </a>
 
       <div className='appHeader_actions'>
         <Dropdown fontDropdown={headerNav.fontDropdown} />
         <span className='appHeader_actions--divider' />
-        <Toggle />
+        <Toggle className='appHeader_fontDropdown' />
       </div>
     </header>
   );

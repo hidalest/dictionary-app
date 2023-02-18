@@ -3,13 +3,21 @@
 .main {
   margin-top: 5rem;
 
-  & .main_header {
-    font-size: 6.4rem;
-    text-transform: capitalize;
-  }
+  .main_header {
+    &-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      align-content: center;
+    }
+    &-title {
+      font-size: 6.4rem;
+      text-transform: capitalize;
+    }
 
-  & .main_phonetic {
-    font-size: 2.4rem;
-    color: $purple-1;
+    &-phonetic {
+      font-size: 2.4rem;
+      color: $purple-1;
+    }
   }
 }

@@ -17,9 +17,13 @@ const MainComponent = (props: MainComponentInterface) => {
   const wordAudio = findAudio?.audio;
   return (
     <section className='main'>
-      <h1 className='main_header'>{word}</h1>
-      <p className='main_phonetic'>{phonetic}</p>
-      {wordAudio && <AudioButton audioURL={wordAudio} />}
+      <div className='main_header-container'>
+        <div>
+          <h1 className='main_header-title'>{word}</h1>
+          <p className='main_header-phonetic'>{phonetic}</p>
+        </div>
+        {wordAudio && <AudioButton audioURL={wordAudio} />}
+      </div>
     </section>
   );
 };

@@ -1,3 +1,4 @@
+import AudioButton from '../../ui/AudioButton/AudioButton';
 import './MainComponent.scss';
 
 interface MainComponentInterface {
@@ -11,11 +12,18 @@ interface MainComponentInterface {
 }
 
 const MainComponent = (props: MainComponentInterface) => {
-  const { word, phonetic } = props.fetchedWord;
+  const { word, phonetic, phonetics } = props.fetchedWord;
+  const findAudio = phonetics.find((phonetic) => phonetic.audio !== '');
+  const wordAudio = findAudio?.audio;
   return (
     <section className='main'>
-      <h1 className='main_header'>{word}</h1>
-      <p className='main_phonetic'>{phonetic}</p>
+      <div className='main_header-container'>
+        <div>
+          <h1 className='main_header-title'>{word}</h1>
+          <p className='main_header-phonetic'>{phonetic}</p>
+        </div>
+        {wordAudio && <AudioButton audioURL={wordAudio} />}
+      </div>
     </section>
   );
 };

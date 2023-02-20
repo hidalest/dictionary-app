@@ -13,8 +13,6 @@ import MainComponent from './layout/MainComponent/MainComponent';
 function App() {
   const appTheme = useAppSelector((state) => state.theme.theme);
   const appFont = useAppSelector((state) => state.theme.font);
-  const searchedWord = useAppSelector((state) => state.theme.searchedWord);
-  const dispatch = useAppDispatch();
   const { sendRequest, fetchedData, isLoading, error } = useGetFetch();
   console.log('🚀 ~ file: App.tsx:18 ~ App ~ fetchedData', fetchedData);
 

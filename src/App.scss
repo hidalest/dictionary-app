@@ -3,7 +3,7 @@
 
 .app {
   width: 100%;
-  height: 100vh;
+  height: 100%;
 
   @include responsiveMax($table) {
     padding: 2.4rem;
@@ -31,7 +31,6 @@
 
   &_container {
     margin: 0 auto;
-    height: 100vh;
 
     @include responsiveMin($table) {
       width: 60rem;

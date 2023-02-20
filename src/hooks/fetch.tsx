@@ -5,7 +5,13 @@ import { useEffect, useState } from 'react';
 interface JSONObject {
   word: string;
   phonetic: string;
-  meaning: [{ partOfSpeach: string; definition: string; synonyms: string }];
+  meanings: [
+    {
+      partOfSpeech: string;
+      definitions: [{ definition: string; example: string }];
+      synonyms: string[];
+    }
+  ];
   phonetics: [{ text: string; audio: string }];
   sourceUrl: string[];
 }

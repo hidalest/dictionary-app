@@ -13,9 +13,11 @@ interface MeaningInterface {
 }
 
 const Meaning = (props: MeaningInterface) => {
-  const { partOfSpeech, definitions } = props;
+  const { partOfSpeech, definitions, synonyms } = props;
   const { meaningsHeader, synonymsHeader } =
     data.mainContent.mainContentElements.wordFound;
+
+  const areSynonymsAvailable = synonyms && synonyms?.length > 0;
   return (
     <article className='meaning'>
       <div className='meaning_header'>
@@ -28,13 +30,23 @@ const Meaning = (props: MeaningInterface) => {
         <ul className='meaning_body--ul'>
           {definitions.map((definition, index) => (
             <li className='meaning_body--li' key={`meaning--element-${index}`}>
-              {definition.definition}
+              <p>{definition.definition}</p>
               {definition.example && (
                 <p className='meaning_body--li_example'>{`"${definition.example}"`}</p>
               )}
             </li>
           ))}
         </ul>
+        {areSynonymsAvailable && (
+          <div className='meaning_body--synonymContainer'>
+            <p className='meaning_body--synonymHeader'>{synonymsHeader}</p>
+            <div>
+              {synonyms?.map((synonym) => (
+                <p className='meaning_body--synonymItem'>{synonym}</p>
+              ))}
+            </div>
+          </div>
+        )}
       </div>
     </article>
   );

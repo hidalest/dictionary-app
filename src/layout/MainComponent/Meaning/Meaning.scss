@@ -37,6 +37,11 @@
         color: $dark-1;
         font-weight: normal;
       }
+
+      .light & {
+        color: $grey-1;
+        font-weight: lighter;
+      }
     }
 
     &--ul {
@@ -49,6 +54,11 @@
       font-size: 1.8rem;
       font-weight: normal;
       margin-bottom: 1.3rem;
+
+      p:first-child {
+        display: inline;
+      }
+
       &::before {
         content: '\2022'; /* Add content: \2022 is the CSS Code/unicode for a bullet */
         color: $purple-1; /* Change the color */
@@ -61,6 +71,25 @@
         color: $grey-1;
         margin-top: 1.3rem;
       }
+    }
+
+    &--synonymContainer {
+      display: flex;
+      align-items: flex-start;
+      margin-top: 6rem;
+      & div {
+        display: flex;
+        flex-wrap: wrap;
+      }
+    }
+    &--synonymHeader {
+      font-size: 2rem;
+      color: $dark-1;
+    }
+    &--synonymItem {
+      font-size: 1.5rem;
+      color: $purple-1;
+      margin: 0 1.3rem;
     }
   }
 }

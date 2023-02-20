@@ -29,10 +29,12 @@ const Meaning = (props: MeaningInterface) => {
           {definitions.map((definition, index) => (
             <li className='meaning_body--li' key={`meaning--element-${index}`}>
               {definition.definition}
+              {definition.example && (
+                <p className='meaning_body--li_example'>{`"${definition.example}"`}</p>
+              )}
             </li>
           ))}
         </ul>
-        {/* <p className='meaning_body--example'>{definition.example}</p> */}
       </div>
     </article>
   );

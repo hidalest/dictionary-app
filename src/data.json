@@ -53,6 +53,10 @@
         "initalEmoji": "😕",
         "initialHeader": "No Definitions Found",
         "initialMessage": "Sorry pal, we couldn't find definitions for the word you were looking for, please try again with other synonyms"
+      },
+      "wordFound": {
+        "meaningsHeader": "Meaning",
+        "synonymsHeader": "Synonyms"
       }
     }
   }

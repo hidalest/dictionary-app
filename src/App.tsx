@@ -1,20 +1,22 @@
 import './App.scss';
-import { useAppDispatch, useAppSelector } from './hooks/redux';
+import { useAppSelector } from './hooks/redux';
 import HeaderNav from './layout/HeaderNav/HeaderNav';
 import data from './data.json';
 import InputText from './ui/InputText/InputText';
 import useGetFetch from './hooks/fetch';
-import { useEffect } from 'react';
 import { API_URL } from './lib/api';
-import { appActions } from './store/store';
 import Spinner from './ui/Spinner/Spinner';
 import MainComponent from './layout/MainComponent/MainComponent';
+import DefaultMessage from './layout/DefaultMessage/DefaultMessage';
 
 function App() {
   const appTheme = useAppSelector((state) => state.theme.theme);
   const appFont = useAppSelector((state) => state.theme.font);
   const { sendRequest, fetchedData, isLoading, error } = useGetFetch();
-  console.log('🚀 ~ file: App.tsx:18 ~ App ~ fetchedData', fetchedData);
+  const defaultCopy =
+    data.mainContent.mainContentElements[
+      error ? 'noWordFound' : 'initialStatus'
+    ];
 
   const fetchedDataAvailabe = fetchedData !== null;
 
@@ -34,10 +36,20 @@ function App() {
           />
 
           {isLoading && <Spinner />}
-
+          {!fetchedDataAvailabe && (
+            <DefaultMessage
+              initialEmoji={defaultCopy.initalEmoji}
+              initialHeader={defaultCopy.initialHeader}
+              initialMessage={defaultCopy.initialMessage}
+            />
+          )}
           {fetchedDataAvailabe && <MainComponent fetchedWord={fetchedData} />}
         </main>
       </div>
+
+      <footer>
+        <p></p>
+      </footer>
     </div>
   );
 }

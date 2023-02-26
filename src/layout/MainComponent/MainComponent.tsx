@@ -26,10 +26,6 @@ type MeaningsObject = {
 
 const MainComponent = (props: MainComponentInterface) => {
   const { word, phonetic, phonetics, meanings } = props.fetchedWord;
-  console.log(
-    '🚀 ~ file: MainComponent.tsx:24 ~ MainComponent ~ meanings',
-    meanings
-  );
   const findAudio = phonetics.find((phonetic) => phonetic.audio !== '');
   const wordAudio = findAudio?.audio;
   return (

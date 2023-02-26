@@ -1,0 +1,23 @@
+@import '../../sassStyles/variables';
+
+.defaultMessage {
+  height: 100%;
+  text-align: center;
+  margin-top: 30%;
+  transform: translateY(-50%);
+
+  &__emoji {
+    font-size: 6.4rem;
+  }
+
+  &__header {
+    font-size: 2rem;
+    font-weight: bold;
+    margin: 4.4rem 0;
+  }
+
+  &__message {
+    font-size: 1.8rem;
+    color: $grey-1;
+  }
+}

@@ -7,7 +7,7 @@ import useGetFetch from './hooks/fetch';
 import { API_URL } from './lib/api';
 import Spinner from './ui/Spinner/Spinner';
 import MainComponent from './layout/MainComponent/MainComponent';
-import MainMessage from './layout/MainMessage/MainMessage';
+import DefaultMessage from './layout/DefaultMessage/DefaultMessage';
 
 function App() {
   const appTheme = useAppSelector((state) => state.theme.theme);
@@ -37,7 +37,7 @@ function App() {
 
           {isLoading && <Spinner />}
           {!fetchedDataAvailabe && (
-            <MainMessage
+            <DefaultMessage
               initialEmoji={defaultCopy.initalEmoji}
               initialHeader={defaultCopy.initialHeader}
               initialMessage={defaultCopy.initialMessage}

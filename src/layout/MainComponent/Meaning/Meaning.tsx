@@ -41,8 +41,13 @@ const Meaning = (props: MeaningInterface) => {
           <div className='meaning_body--synonymContainer'>
             <p className='meaning_body--synonymHeader'>{synonymsHeader}</p>
             <div>
-              {synonyms?.map((synonym) => (
-                <p className='meaning_body--synonymItem'>{synonym}</p>
+              {synonyms?.map((synonym, index) => (
+                <p
+                  className='meaning_body--synonymItem'
+                  key={`sinonym-${index}`}
+                >
+                  {synonym}
+                </p>
               ))}
             </div>
           </div>

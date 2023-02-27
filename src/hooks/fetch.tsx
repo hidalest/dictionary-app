@@ -13,7 +13,7 @@ interface JSONObject {
     }
   ];
   phonetics: [{ text: string; audio: string }];
-  sourceUrl: string[];
+  sourceUrls: string[];
 }
 
 const useGetFetch = (applyAction?: (data: JSONObject) => void) => {

@@ -8,6 +8,7 @@ import { API_URL } from './lib/api';
 import Spinner from './ui/Spinner/Spinner';
 import MainComponent from './layout/MainComponent/MainComponent';
 import DefaultMessage from './layout/DefaultMessage/DefaultMessage';
+import urlIcon from './assets/images/icon-new-window.svg';
 
 function App() {
   const appTheme = useAppSelector((state) => state.theme.theme);
@@ -36,7 +37,7 @@ function App() {
           />
 
           {isLoading && <Spinner />}
-          {!fetchedDataAvailabe && (
+          {!fetchedDataAvailabe && !isLoading && (
             <DefaultMessage
               initialEmoji={defaultCopy.initalEmoji}
               initialHeader={defaultCopy.initialHeader}
@@ -47,9 +48,22 @@ function App() {
         </main>
       </div>
 
-      <footer>
-        <p></p>
-      </footer>
+      {fetchedDataAvailabe && (
+        <>
+          <hr className='division' />
+          <footer className='footer'>
+            <p className='footer__header'>{data.footer.footerHeader}</p>
+            <p className='footer__url'>{fetchedData.sourceUrls[0]}</p>
+            <a
+              className='footer__button'
+              target={'_blank'}
+              href={fetchedData.sourceUrls[0]}
+            >
+              <img src={urlIcon} alt='New Page' />
+            </a>
+          </footer>
+        </>
+      )}
     </div>
   );
 }

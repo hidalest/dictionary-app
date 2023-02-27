@@ -14,7 +14,6 @@ interface MainComponentInterface {
       }
     ];
     phonetics: [{ text: string; audio: string }];
-    sourceUrl: string[];
   };
 }
 

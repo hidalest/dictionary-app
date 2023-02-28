@@ -9,6 +9,7 @@ import Spinner from './ui/Spinner/Spinner';
 import MainComponent from './layout/MainComponent/MainComponent';
 import DefaultMessage from './layout/DefaultMessage/DefaultMessage';
 import urlIcon from './assets/images/icon-new-window.svg';
+import Footer from './layout/Footer/Footer';
 
 function App() {
   const appTheme = useAppSelector((state) => state.theme.theme);
@@ -49,20 +50,11 @@ function App() {
       </div>
 
       {fetchedDataAvailabe && (
-        <>
-          <hr className='division' />
-          <footer className='footer'>
-            <p className='footer__header'>{data.footer.footerHeader}</p>
-            <p className='footer__url'>{fetchedData.sourceUrls[0]}</p>
-            <a
-              className='footer__button'
-              target={'_blank'}
-              href={fetchedData.sourceUrls[0]}
-            >
-              <img src={urlIcon} alt='New Page' />
-            </a>
-          </footer>
-        </>
+        <Footer
+          header={data.footer.footerHeader}
+          url={fetchedData.sourceUrls[0]}
+          urlIcon={urlIcon}
+        />
       )}
     </div>
   );

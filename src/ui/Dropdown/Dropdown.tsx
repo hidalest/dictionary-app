@@ -2,11 +2,11 @@ import { useState } from 'react';
 import { useAppDispatch, useAppSelector } from '../../hooks/redux';
 import { appActions } from '../../store/store';
 import { getFontFullName } from '../../utils/functions';
+import arrowIcon from '../../assets/images/icon-arrow-down.svg';
 import './Dropdown.scss';
 
 interface DropdownInterface {
   fontDropdown: {
-    arrowIcon: string;
     items: Array<object>;
   };
 }
@@ -71,7 +71,7 @@ const DropdownElements = (props: DropdownElementsInterface) => {
 };
 
 const Dropdown = ({ fontDropdown }: DropdownInterface) => {
-  const { arrowIcon, items } = fontDropdown;
+  const { items } = fontDropdown;
   return (
     <DropdownContainer arrowIcon={arrowIcon}>
       <DropdownElements items={items} />

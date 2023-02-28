@@ -1,20 +1,17 @@
 import React, { useState } from 'react';
-import useGetFetch from '../../hooks/fetch';
+import searchIcon from '../../assets/images/icon-search.svg';
 import './InputText.scss';
 
 interface InputTextInterface {
   inputElement: {
-    searchIcon: string;
     errorMessage: string;
   };
 
   getTextFromInput: (text: string) => void;
 }
 
-const API_URL = `https://api.dictionaryapi.dev/api/v2/entries/en/`;
-
 const InputText = ({ inputElement, getTextFromInput }: InputTextInterface) => {
-  const { searchIcon, errorMessage } = inputElement;
+  const { errorMessage } = inputElement;
   const [inputValue, setInputValue] = useState('');
   const [isFormValid, setIsFormValid] = useState<undefined | boolean>(
     undefined

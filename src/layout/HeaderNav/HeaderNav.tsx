@@ -11,7 +11,6 @@ interface HeaderNavInterface {
       href: string;
     };
     fontDropdown: {
-      arrowIcon: string;
       items: Array<object>;
     };
   };

@@ -5,11 +5,9 @@
     "logo": {
       "href": "#",
       "title": "logo of the dictionary app",
-      "path": "./src/assets/images/logo.svg",
       "altText": "dictionary logo"
     },
     "fontDropdown": {
-      "arrowIcon": "/src/assets/images/icon-arrow-down.svg",
       "items": [
         {
           "fontName": "sans",
@@ -27,9 +25,6 @@
           "fontFullName": "Roboto Mono"
         }
       ]
-    },
-    "toggleTheme": {
-      "lightIcon": "/src/assets/images/icon-moon.svg"
     }
   },
   "mainContent": {
@@ -42,7 +37,7 @@
       "initialStatus": {
         "initalEmoji": "👨‍💻",
         "initialHeader": "Let's start by searching your first word!",
-        "initialMessage": "We would try and give you full details of the word that you want to search :)"
+        "initialMessage": "We will try and give you full details of the word that you want to search :)"
       },
       "serverErrorStatus": {
         "initalEmoji": "📟",

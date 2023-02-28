@@ -1,18 +1,22 @@
-# Frontend Mentor - Dictionary web app
+# Dictionary web app
 
-![Design preview for the Dictionary web app coding challenge](./preview.jpg)
+This is a solution to the [Dictionary web app challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/dictionary-web-app-h5wwnyuKFL).
 
-## Welcome! 👋
+## Table of contents
 
-**This challenge is still under development**
+- [Overview](#overview)
+  - [The challenge](#the-challenge)
+  - [Screenshot](#screenshot)
+  - [Links](#links)
+- [My process](#my-process)
+  - [Built with](#built-with)
+- [Author](#author)
 
-## The challenge
+## Overview
 
-Your challenge is to build out this dictionary web app using the [Free Dictionary API](https://dictionaryapi.dev/) and get it looking as close to the design as possible.
+### The challenge
 
-You can use any tools you like to help you complete the challenge. So if you've got something you'd like to practice, feel free to give it a go.
-
-Your users should be able to:
+Users should be able to:
 
 - Search for words using the input field
 - See the Free Dictionary API's response for the searched word
@@ -22,4 +26,32 @@ Your users should be able to:
 - Switch between light and dark themes
 - View the optimal layout for the interface depending on their device's screen size
 - See hover and focus states for all interactive elements on the page
-- **Bonus**: Have the correct color scheme chosen for them based on their computer preferences. _Hint_: Research `prefers-color-scheme` in CSS.
+
+### Screenshot
+
+![screenshot1](./screenshot1.png)
+![screenshot2](./screenshot2.png)
+
+### Links
+
+- Solution URL: [FrontEnd Mentor Solution](https://www.frontendmentor.io/solutions/dictionary-app-with-typescript-and-redux-eBlEscxcv5)
+- Live Site URL: [https://hidalest.github.io/dictionary-app/](https://hidalest.github.io/dictionary-app/)
+
+## My process
+
+### Built with
+
+- Semantic HTML5 markup
+- CSS custom properties
+- Flexbox
+- Mobile-first workflow
+- [Vite](https://vitejs.dev/guide/)
+- [SCSS](https://sass-lang.com/)
+- [React](https://reactjs.org/) - JS library
+- [React-Redux](https://react-redux.js.org/) - JS library
+- [Typescript](https://www.typescriptlang.org/) - JS library
+
+## Author
+
+- Frontend Mentor - [@hidalest](https://www.frontendmentor.io/profile/hidalest)
+- Twitter - [@hidalest](https://www.twitter.com/hidalest)

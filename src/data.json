@@ -9,7 +9,7 @@
       "altText": "dictionary logo"
     },
     "fontDropdown": {
-      "arrowIcon": "./src/assets/images/icon-arrow-down.svg",
+      "arrowIcon": "/src/assets/images/icon-arrow-down.svg",
       "items": [
         {
           "fontName": "sans",
@@ -29,14 +29,14 @@
       ]
     },
     "toggleTheme": {
-      "lightIcon": "./src/assets/images/icon-moon.svg"
+      "lightIcon": "/src/assets/images/icon-moon.svg"
     }
   },
   "mainContent": {
     "inputElement": {
       "placeholder": "Search for any word",
       "errorMessage": "Whoops, can't be empty",
-      "searchIcon": "./src/assets/images/icon-search.svg"
+      "searchIcon": "/src/assets/images/icon-search.svg"
     },
     "mainContentElements": {
       "initialStatus": {
